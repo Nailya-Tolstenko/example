@@ -11,9 +11,11 @@
 :focus, :active{outline: none;}
 a:focus, a:active{outline: none;}
 
-nav,footer,header,aside{display: block;}
+nav,footer,header,aside {
+    display: block;
+}
 
-html, body{
+html, body {
 	height: 100%;
 	width: 100%;
 	font-style: 100%;
@@ -24,17 +26,43 @@ html, body{
 	-webkit-text-size-adjust: 100%;
 }
 
-input, button, textarea{font-family: inherit;}
+input, button, textarea {
+    font-family: inherit;
+}
 
-input::-ms-clear{display:none;}
-button{cursor: pointer;}
-button::-moz-focus-inner{padding: 0;border: 0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style-type: none;}
-img{vertical-align: top;}
+input::-ms-clear {
+    display:none;
+}
 
-h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,h2, h3, h4, h5, h6 {
+    font-style: inherit;
+    font-weight: 400;
+}
 
 body {
     font-family: 'Noto Sans', sans-serif;
@@ -47,33 +75,57 @@ body {
     font-size: 34px;
 }
 
+.main {
+    display: flex;
+    width: 1000px;
+    margin: 30px auto 0 auto;
+    flex-direction: column;
+}
+
 .main-block {
     line-height: 34px;
     padding-bottom: 18px;
     padding-top: 18px;
-    }
-
-.main-block p {
-    background: url('img/Vector.jpg') 620px 5px no-repeat;
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto 0 auto;
 }
 
+.main-block li {
+    display: flex;
+    justify-content: ;
+}
 
-.main-block p:first-child {
+.main-block li::before {
+    content: "";
+    width: 35px;
+    background: url('../img/Vector.jpg') 0px 5px no-repeat;
+}
+
+.main-block li:first-child {
    text-decoration: line-through;
 }
 
-.main-block p:nth-child(2) {
+.main-block li:nth-child(2) {
     font-weight: 700;
 }
 
-.main-block p:nth-child(3) {
+.main-block li:nth-child(3) {
     font-style: italic
 }
 
-.main-block p:last-child {
+.main-block li:last-child {
     text-transform: uppercase;
-} 
+}
 
+.wrap-flex {
+    display: flex;
+    margin: 0 0 50px 0;
+}
+
+.block {
+    display: flex;
+}
 
 .block p {
     text-align: center;
@@ -98,10 +150,29 @@ body {
 }
 
 .container {
-    margin: 150px;
     display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#auth-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#auth-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#auth-form form div {
     justify-content: space-between;
-    color: white
+    display: flex;
+}
+
+#auth-form form div input {
+    margin-left: 20px;
 }
 
 .first-button {
