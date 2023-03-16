@@ -4,6 +4,7 @@
 
     <meta charset="UTF-8">
 
+    <!-- Вставляй title после указания кодировки, а не суй его вниз тэга head -->
     <title>Document</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,15 +18,23 @@
 
 <body>
 
+    <!--Нужно делать главный блок в котором будут все остальные и чтобы у него ширина была фиксированная примерно 1000px и выравнивать его по центру экрана margin: o auto; -->
+
     <div class="main">
 
+        <!-- Тэг h1 тоже нужно внутрь главного вставить чтобы он не болтался сам по себе -->
         <h1 class="head">Стилизируй с помощью псевдоклассов</h1>
 
+        <!-- Теги не оборачиваешь - нужно дополнительно сверху ещё div делать чтобы он во всю ширину был КАК ТУТ wrap-flex -->
         <div class="wrap-flex">
             
+            <!-- Нужно добавлять блокам display - grid или flex смотря с чем работаешь -->
+            <!-- Потом нужно смотреть по дизайну и выравнивать их - например как тут flex-direction: row чтобы они внутринние в все в ряд шли -->
             <div class="main-block">
 
+                <!-- Тут логичней сделать список ul вместо парагрофов p особенно потому что у тебя есть иконки с права от каждой строчки -->
                 <ul>
+                    <!-- Обрати внимание как сделаны иконки для тегов li - через псевдоселектор before - хотя бы так нужно делать -->
                     <li>Put on this page information about your prodact</li>
                     <li>A detailed discription of your prodact</li>
                     <li>Tell us about the advantades and merits</li>
@@ -36,10 +45,12 @@
 
         </div>
 
+        <!-- Опять оборачиваем блок отдельный в дополнительны flex-wrap чтобы его можно было отделить от остальных -->
         <div class="wrap-flex">
 
             <div class="block">
 
+                <!-- ОБрати внимание ты ставила тэги a поверх тэгов p - так почти никогда делать не нужно - это не правильно - строчные тэги a должны быть внутри блочных p или div -->
                 <p>
                     <a class="color" href="https://fls.guru/cssbackground.html" target="_blank">
                         Put on this page information about your prodact
@@ -61,8 +72,10 @@
 
         </div>
 
+        <!-- Тут опять обёртывает чтобы отделить от остальной части кода -->
         <div class="wrap-flex">
 
+            <!-- Также не забываем блокам div давать display: flex; - смотри как нужно выровнить контент внутри так как он должен быть по центру делаем justify-content: center; -->
             <div class="container">
 
                 <div class="first-button">
@@ -92,20 +105,30 @@
 
         </div>
 
+        <!-- Тут опять обёртывает чтобы отделить от остальной части кода -->
         <div class="wrap-flex">
 
+            <!-- Тоже самое тут смотри что форма должна быть по центру - display: flex; justify-content: center; -->
             <div id="auth-form">
 
+                <!-- Тэг form тоже можно использовать как внутренний блок - даём ему display: flex; и нам нужно чтобы элементы формы становились в ряд flex-direction: column; -->
                 <form action="#" method="get">
 
+                    <!-- Так как у нас есть внутри 2 тэга для каждой сщности username и password то оборачиваем каждую пару тэгов в дополнительный div -->
+                    <!-- div У нас должен быть во всю ширину чтобы ничего не поехало и нужно выровнить внутри элементы формы label и input по центру - display: flex; выравниваем по центру justify-content: space-between; -->
                     <div>
+                        <!-- Тут внимание вместо тэгов p для заголовком над input элементами используется label
+                        запомни чтобы у label есть for - он нужен для взаимодействия c input элементами
+                        Делаем для label for="inp-username" а для input id="inp-username" и теперь когды ты будешь кликать на название то будешь попадать внутерь input элемента и курсор будет уже на нём! -->
                         <label for="inp-username">Имя</label>
-                        <input id="inp-username" typeindex="1" placeholder="Имя" name="username" type="text"/>
+                        <input id="inp-username" placeholder="Имя" name="username" type="text"/>
                     </div>
 
                     <div>
                         <label for="inp-password">Пароль</label>
-                        <input id="inp-password" typeindex="2" name="password" type="password" placeholder="Пароль"  />
+                        <!-- Не нужно называть name="pass" называй password - так принято обычно -->
+                        <!-- что за typeindex="1"? - нету такого аттрибута -->
+                        <input id="inp-password" name="password" type="password" placeholder="Пароль"  />
                     </div>
 
                 </form>
